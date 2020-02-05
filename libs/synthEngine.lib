@@ -1,0 +1,93 @@
+// import("soundfiles.lib");
+
+oscN = 4;
+getOscType(freq) = par(i,oscN,ba.if(oscType == i, osc(i, freq), 0))
+with {
+    osc(0, f) = os.osc(f);
+    osc(1, f) = os.sawtooth(f);
+    osc(2, f) = os.triangle(f);
+    osc(3, f) = os.square(f);
+};
+
+synth(freq) =  getOscType(freq) :> _ * mapFromMIDIscale(synthLevel);
+// with {
+    // decimalpart(x) = x-int(x);
+    // phase(f) = f/ma.SR : (+ : decimalpart) ~ _;
+
+    // ramp(f) = phase(f);
+    // saw(f) = 1 - phase;
+    // sine(f) = phase(f) * 2 * ma.PI : sin;
+    // triangle(f) = f <: ba.if(phase(_) >= phase(_)/2, 1-phase(_), phase(_));
+
+    // osc(0, freq) = sine(freq);
+    // osc(1, freq) = ramp(freq);
+    // osc(2, freq) = saw(freq);
+    // osc(3, freq) = triangle(freq);
+
+// };
+
+
+tunedNoise(freq) = out(freq) : _ * mapFromMIDIscale(noiseLevel)
+with {
+    baseFilterFreq = 100;
+    bandWidth = 20;
+
+    calcLower(freq) = ba.if(freq==0, baseFilterFreq, freq) : int;
+    calcUpper(freq) = ba.if(freq==0, baseFilterFreq, freq) + bandWidth : int;    
+    out(x) = no.noise : fi.bandpass(1, calcLower(x), calcUpper(x));
+};
+
+smoothOutput = co.compressor_mono(10,ba.linear2db(0.4),1,0) :  co.limiter_1176_R4_mono :> _;
+// tunedNoise(in) = ba.if(noise == 1, out(in), 0) :> _
+// with {
+//     calcLower(freq) = freq : int;
+//     calcUpper(freq) = freq + 10 : int;
+//     out(x) = no.noise : fi.bandpass(1, x, x) :> _;
+// }; 
+// tunedNoise = _ : ba.if(noise == 1, out(_), 0) : _ 
+// with {
+//     // lower = freq : int;
+//     // upper = freq + 10 : int;
+//     out(freq) = no.noise : fi.bandpass(1, (freq : int), (freq + 10 : int)) <: _,_;
+// };
+
+// pulseSeq(freq, pulse) = out(freq, pulse) : _ * mapFromMIDIscale(seqLevel)
+// with {
+//     out(f, p) = os.triangle(f) * en.ar(seqPulseLen, seqPulseLen, p);
+// };
+
+
+pulseSeq(freq, pulse) = out(freq, pulse) : _ * mapFromMIDIscale(seqLevel)
+with {
+    out(f, p) = os.osc(f) * en.ar(seqPulseLen, seqPulseLen, p);
+};
+
+drumSeq(step, trackN, track) = step <: getTrackStep(track, step) * tr(trackN, (step : ba.impulsify))
+with {
+    getTrackStep(t, s) = (t, s) : rdtable;
+    // getTrackBeat(p) = tr(0), tr(1);
+    // drums = soundfile("label[url:{'kick2.wav';'snare.wav';'hh.wav'}]", 1);
+
+    // trig = button("gate");
+    // drums = soundfile("label[url:{'kick2.wav';'snare.wav';'hh.wav'}]", 1);
+    // kick = 1, (_~+(1*trig)) : drums : !, !, _;
+    // kick = so.sound(drums, 0);
+    // snare = so.sound(drums, 1);
+    // hh = so.sound(drums, 2);
+    // tr(0, p) = kick.play(1, p);
+    // tr(1, p) = kick.play(1, p);
+    // tr(2, p) = kick.play(1, p);
+    kick(p) = ((os.square(30) : fi.lowpass(2,20)) * en.ar(0.01, 0.1, p)) + pm.strike(0.0, 1, 1, p);
+    // hhLen = nentry("hhLen", 0.01, 0.01, 1, 0.01);
+    // hhLow = nentry("hhLow", 5000, 3000, 7000, 100);
+    // hhHi = nentry("hhHi", 8000, 6000, 10000, 100);
+    //  hh(p) = no.noise : fi.bandpass(1, hhLow, hhHi) * en.ar(hhLen, hhLen, p);
+    hh(p) = no.noise : fi.bandpass(1, 4700, 6000) * en.ar(0.01, 0.03, p);
+
+    snare(p) = pm.strike(0.25, 0.5, 1, p);
+    // snare(p) = os.osc((440 + (step*10)));
+
+    tr(0, p) = kick;
+    tr(1, p) = hh;
+    tr(2, p) = snare;
+};

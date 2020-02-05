@@ -1,0 +1,27 @@
+inputsN = 8;
+input = si.bus(inputsN);
+parallelBus = par(i, inputsN, _);
+
+mapFromMIDIscale(x) = ba.if(int(x)==0, 0, int(x)/127);
+
+//TONE ACCORD
+
+baseKeyMIDI = nentry("baseKeyMIDI",69,0,128,1);
+oscType = nentry("oscType", 0, 0, 4, 1);
+scaleSelector = nentry("scale", 0, 0, scalesN-1, 1);
+synthLevel = nentry("synthLevel", 0, 64, 127, 1);
+noiseLevel = nentry("noiseLevel", 0, 0, 127, 1);
+
+// ARPEGGIATOR
+
+seqSteps = 8;
+seqTempo = nentry("seqTempo",120,40,200,1);
+seqLevel = nentry("seqLevel", 64, 0, 127, 1);
+seqON = nentry("seqOn", 1, 0, 1, 1);
+seqPulseLen = nentry("seqPulseLen", 0.1, 0.1, 1, 0.01);
+
+
+// COUNTER 
+
+holdSec = nentry("holdSec", 4, 1, 10, 1);
+
