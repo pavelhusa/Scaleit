@@ -24,4 +24,14 @@ seqPulseLen = nentry("seqPulseLen", 0.1, 0.1, 1, 0.01);
 // COUNTER 
 
 holdSec = nentry("holdSec", 4, 1, 10, 1);
+resetCounter = nentry("resetCounter", 1, 0, 1, 1);
 
+// MIXER
+
+gameToneLevel = nentry("gameToneLevel", 64, 0, 127, 1);
+gameAccordLevel = nentry("gameAccordLevel", 64, 0, 127, 1);
+gameArpLevel = nentry("gameArpLevel", 64, 0, 127, 1);
+
+gameToneON = nentry("gameToneON", 0, 0, 1, 1);
+gameAccordON = nentry("gameAccordON", 0, 0, 1, 1);
+gameArpON = nentry("gameArpON", 0, 0, 1, 1);

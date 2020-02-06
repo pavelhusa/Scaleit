@@ -17,6 +17,7 @@ counterSamp(x) = ba.if(x >= aboveSamp, 0, x);
 
 hold = (+(aboveTresh)~counterSamp) == aboveSamp;
 
-counter = +(hold)~_;
+counterReset = ba.if(resetCounter==1, 0, _);
+counter = +(hold)~(counterReset);
 
 process = counter;

@@ -1,0 +1,191 @@
+#N canvas 0 -1057 1920 1035 12;
+#X obj 591 291 belowTresh~;
+#X obj 573 366 gameToneSynth~;
+#X floatatom 311 223 5 0 4 0 - - -;
+#X floatatom 395 221 5 0 0 0 - - -;
+#X msg 396 254 baseKeyMIDI \$1;
+#X msg 311 256 oscType \$1;
+#X floatatom 227 224 5 0 5 0 - - -;
+#X msg 228 257 scale \$1;
+#X msg 121 257 noiseLevel \$1;
+#X floatatom 121 222 5 0 0 0 - - -;
+#X obj 120 64 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 393 66 vsl 15 128 40 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 13 223 5 0 0 0 - - -;
+#X obj 12 58 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 13 258 synthLevel \$1;
+#X msg 433 137 invert \$1;
+#X obj 434 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 1345 280 belowTresh~;
+#X floatatom 1065 212 5 0 4 0 - - -;
+#X floatatom 1149 210 5 0 0 0 - - -;
+#X obj 1128 164 hsl 128 15 40 80 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X msg 1150 243 baseKeyMIDI \$1;
+#X msg 1066 245 oscType \$1;
+#X floatatom 981 213 5 0 5 0 - - -;
+#X msg 982 246 scale \$1;
+#X obj 1327 355 gameAccordSynth~;
+#X msg 1282 174 invert \$1;
+#X obj 1283 125 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X msg 866 246 noiseLevel \$1;
+#X floatatom 866 211 5 0 0 0 - - -;
+#X obj 865 53 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 758 212 5 0 0 0 - - -;
+#X obj 757 59 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 758 247 synthLevel \$1;
+#X msg 1703 257 seqON \$1;
+#X obj 1699 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+0 1;
+#X obj 1540 185 hsl 128 15 40 120 0 0 empty empty empty -2 -8 0 10
+-262144 -1 -1 700 1;
+#X floatatom 1532 221 5 0 5 0 - - -;
+#X obj 1683 347 gameArpSynth~;
+#X msg 1608 259 seqTempo \$1;
+#X msg 1852 170 holdSec \$1;
+#X obj 1861 28 hsl 128 15 1 5 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 8500 1;
+#X floatatom 1850 133 5 0 5 0 - - -;
+#X obj 1850 81 int;
+#X floatatom 745 -87 5 0 2 0 - - -;
+#X floatatom 811 -83 5 0 5 0 - - -;
+#X obj 711 -163 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 2500 1;
+#X obj 864 -164 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 723 -24 s level;
+#X obj 812 -25 s treshold;
+#X obj 1364 204 r level;
+#X obj 1430 204 r treshold;
+#X obj 605 209 r level;
+#X obj 671 209 r treshold;
+#X obj 1909 204 r level;
+#X obj 1975 204 r treshold;
+#X obj 817 625 gameMixer~;
+#X obj 849 765 dac~;
+#X obj 267 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 133 505 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 109 560 5 0 0 0 - - -;
+#X obj 108 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 109 595 gameToneLevel \$1;
+#X floatatom 246 558 5 0 0 0 - - -;
+#X obj 246 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 247 593 gameAccordLevel \$1;
+#X obj 410 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X floatatom 389 558 5 0 0 0 - - -;
+#X obj 389 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X msg 390 593 gameArpLevel \$1;
+#X msg 132 530 gameToneON \$1;
+#X msg 267 526 gameAccordON \$1;
+#X msg 410 526 gameArpON \$1;
+#X floatatom 1718 106 5 0 0 0 - - -;
+#X msg 1721 164 resetCounter \$1;
+#X obj 1707 4 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 1694 65 int;
+#X obj 1853 281 aboveTreshCounter~;
+#X connect 0 0 1 1;
+#X connect 0 1 1 2;
+#X connect 0 2 1 3;
+#X connect 0 3 1 4;
+#X connect 0 4 1 5;
+#X connect 0 5 1 6;
+#X connect 0 6 1 7;
+#X connect 0 7 1 8;
+#X connect 1 0 56 1;
+#X connect 2 0 5 0;
+#X connect 3 0 4 0;
+#X connect 4 0 1 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 8 0 1 0;
+#X connect 9 0 8 0;
+#X connect 10 0 9 0;
+#X connect 11 0 3 0;
+#X connect 12 0 14 0;
+#X connect 13 0 12 0;
+#X connect 14 0 1 0;
+#X connect 15 0 0 0;
+#X connect 16 0 15 0;
+#X connect 17 0 25 1;
+#X connect 17 1 25 2;
+#X connect 17 2 25 3;
+#X connect 17 3 25 4;
+#X connect 17 4 25 5;
+#X connect 17 5 25 6;
+#X connect 17 6 25 7;
+#X connect 17 7 25 8;
+#X connect 18 0 22 0;
+#X connect 19 0 21 0;
+#X connect 20 0 19 0;
+#X connect 21 0 25 0;
+#X connect 22 0 25 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 56 2;
+#X connect 26 0 17 0;
+#X connect 27 0 26 0;
+#X connect 28 0 25 0;
+#X connect 29 0 28 0;
+#X connect 30 0 29 0;
+#X connect 31 0 33 0;
+#X connect 32 0 31 0;
+#X connect 33 0 25 0;
+#X connect 34 0 38 0;
+#X connect 35 0 34 0;
+#X connect 36 0 37 0;
+#X connect 37 0 39 0;
+#X connect 38 0 56 3;
+#X connect 39 0 38 0;
+#X connect 40 0 77 0;
+#X connect 41 0 43 1;
+#X connect 41 0 43 0;
+#X connect 42 0 40 0;
+#X connect 43 0 42 0;
+#X connect 44 0 48 0;
+#X connect 45 0 49 0;
+#X connect 46 0 44 0;
+#X connect 47 0 45 0;
+#X connect 50 0 17 1;
+#X connect 51 0 17 2;
+#X connect 52 0 0 1;
+#X connect 53 0 0 2;
+#X connect 54 0 77 1;
+#X connect 55 0 77 2;
+#X connect 56 0 57 0;
+#X connect 56 1 57 1;
+#X connect 58 0 71 0;
+#X connect 59 0 70 0;
+#X connect 60 0 62 0;
+#X connect 61 0 60 0;
+#X connect 62 0 56 0;
+#X connect 63 0 65 0;
+#X connect 64 0 63 0;
+#X connect 65 0 56 0;
+#X connect 66 0 72 0;
+#X connect 67 0 69 0;
+#X connect 68 0 67 0;
+#X connect 69 0 56 0;
+#X connect 70 0 56 0;
+#X connect 71 0 56 0;
+#X connect 72 0 56 0;
+#X connect 73 0 74 0;
+#X connect 74 0 77 0;
+#X connect 75 0 76 0;
+#X connect 75 0 76 1;
+#X connect 76 0 73 0;
+#X connect 77 0 38 1;
