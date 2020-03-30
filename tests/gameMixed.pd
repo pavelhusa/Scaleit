@@ -10,15 +10,15 @@
 #X msg 121 257 noiseLevel \$1;
 #X floatatom 121 222 5 0 0 0 - - -;
 #X obj 120 64 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 2200 1;
 #X obj 393 66 vsl 15 128 40 100 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 1100 1;
 #X floatatom 13 223 5 0 0 0 - - -;
 #X obj 12 58 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 10900 1;
 #X msg 13 258 synthLevel \$1;
 #X msg 433 137 invert \$1;
-#X obj 434 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 434 88 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 1345 280 belowTresh~;
 #X floatatom 1065 212 5 0 4 0 - - -;
@@ -45,19 +45,19 @@
 #X obj 1699 207 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X obj 1540 185 hsl 128 15 40 120 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 700 1;
+-262144 -1 -1 1400 1;
 #X floatatom 1532 221 5 0 5 0 - - -;
 #X obj 1683 347 gameArpSynth~;
 #X msg 1608 259 seqTempo \$1;
 #X msg 1852 170 holdSec \$1;
 #X obj 1861 28 hsl 128 15 1 5 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 8500 1;
+-1 -1 8600 1;
 #X floatatom 1850 133 5 0 5 0 - - -;
 #X obj 1850 81 int;
 #X floatatom 745 -87 5 0 2 0 - - -;
 #X floatatom 811 -83 5 0 5 0 - - -;
 #X obj 711 -163 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2500 1;
+-1 -1 4400 1;
 #X obj 864 -164 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 12700 1;
 #X obj 723 -24 s level;
@@ -72,17 +72,17 @@
 #X obj 849 765 dac~;
 #X obj 267 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 133 505 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 133 505 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 109 560 5 0 0 0 - - -;
 #X obj 108 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X msg 109 595 gameToneLevel \$1;
 #X floatatom 246 558 5 0 0 0 - - -;
 #X obj 246 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X msg 247 593 gameAccordLevel \$1;
-#X obj 410 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 410 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 389 558 5 0 0 0 - - -;
 #X obj 389 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144

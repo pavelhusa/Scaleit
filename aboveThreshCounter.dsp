@@ -5,9 +5,9 @@ import("libs/gameConfig.lib");
 alpha = _;
 alphaT = _;
 
-treshCut = 0.5;
-treshSplit = alphaT * treshCut;
-aboveTresh = alpha, treshSplit : _ > _;
+threshCut = 0.5;
+threshSplit = alphaT * threshCut;
+aboveThresh = alpha, threshSplit : _ > _;
 
 aboveSamp = ba.sec2samp(holdSec);
 
@@ -15,7 +15,7 @@ aboveSamp = ba.sec2samp(holdSec);
 counterSamp(x) = ba.if(x >= aboveSamp, 0, x);
 // counterSamp(x) = reset;
 
-hold = (+(aboveTresh)~counterSamp) == aboveSamp;
+hold = (+(aboveThresh)~counterSamp) == aboveSamp;
 
 counterReset = ba.if(resetCounter==1, 0, _);
 counter = +(hold)~(counterReset);
