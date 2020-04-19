@@ -36,3 +36,6 @@ gameArpLevel = nentry("gameArpLevel", 64, 0, 127, 1);
 gameToneON = nentry("gameToneON", 0, 0, 1, 1);
 gameAccordON = nentry("gameAccordON", 0, 0, 1, 1);
 gameArpON = nentry("gameArpON", 0, 0, 1, 1);
+
+gameTonePan = nentry("gameTonePan", 0.5, 0, 1, 0.01);
+gameArpPan = nentry("gameArpPan", 0.5, 0, 1, 0.01);

@@ -11,5 +11,5 @@ inv = nentry("invert",0,0,1,1);
 getStepRatio(n) = lowThresh + currentStepRation(n)
 with {
   currentStepRation(i) = linear(i);
-  linear(x) = x * (hiThresh - lowThresh) / intervalN;
+  linear(x) = x * (hiThresh - lowThresh) / activeSteps;
 };
