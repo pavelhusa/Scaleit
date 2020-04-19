@@ -1,6 +1,6 @@
 intervalN = 12;
 lowThresh = 0.0;
-hiThresh = 0.8;
+hiThresh = 1;
 
 distributionN = 2;
 activeSteps = nentry("activeSteps", 8, 1, intervalN, 1);
