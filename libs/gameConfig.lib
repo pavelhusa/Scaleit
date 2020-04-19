@@ -11,6 +11,7 @@ oscType = nentry("oscType", 0, 0, 4, 1);
 scaleSelector = nentry("scale", 0, 0, scalesN-1, 1);
 synthLevel = nentry("synthLevel", 64, 0, 127, 1);
 noiseLevel = nentry("noiseLevel", 0, 0, 127, 1);
+envTime = nentry("envelopeTime", 0.2, 0.1, 0.5, 0.05);
 
 // ARPEGGIATOR
 
