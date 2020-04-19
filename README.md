@@ -1,4 +1,4 @@
-# CEREBRO
+# Scale it
 EEG music neurofeedback.
 ## Modules description
 

@@ -1,4 +1,4 @@
-inputsN = 8;
+inputsN = 12;
 input = si.bus(inputsN);
 parallelBus = par(i, inputsN, _);
 
@@ -15,7 +15,7 @@ envTime = nentry("envelopeTime", 0.2, 0.1, 0.5, 0.05);
 
 // ARPEGGIATOR
 
-seqSteps = 8;
+seqSteps = 12;
 seqTempo = nentry("seqTempo",120,40,200,1);
 seqLevel = nentry("seqLevel", 64, 0, 127, 1);
 seqON = nentry("seqOn", 1, 0, 1, 1);

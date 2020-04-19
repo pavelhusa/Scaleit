@@ -17,12 +17,12 @@ import("libs/synthEngine.lib");
 // synths = activeOsc;
 // toMIDI(n, out) = ba.if(out == 1, baseKeyMIDI+ba.take(n+1, activeScale), 0);
 
-out = input : par(i, inputsN, toFrequency(i, _)) : getMax : int <: synth, tunedNoise
+out = input : par(i, inputsN, toFrequency(i, _)) <: getMax :> int <: synth, tunedNoise
 with {
     summed = parallelBus;
     toFrequency(n, in) = ba.if(in==1, ba.midikey2hz(baseKeyMIDI+getTone(n)), 0);
     //POSSIBLE SPACE FOR RECURSION - TODO!!
-    getMax = par(n, inputsN/2, max) : par(n, inputsN/4, max) : max;
+    getMax = par(n, inputsN/2, max) <: par(n, inputsN/4, max) : max, _ : max;
 };
 
 process = out :> smoothOutput;

@@ -1,21 +1,21 @@
 // MAJOR SCALE 
-scale(0) = waveform{0, 2, 4, 5, 7, 9, 11, 12};
+scale(0) = waveform{0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19};
 // MINOR SCALE 
-scale(1) = waveform{0, 2, 3, 5, 7, 8, 10, 12};
+scale(1) = waveform{0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 18};
 // WHOLE TONE
-scale(2) = waveform{0, 2, 4, 6, 8, 10, 12, 14};
+scale(2) = waveform{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22};
 // MAJOR CHORD
-scale(3) = waveform{0, 4, 7, 12, 16, 19, 24, 28};
+scale(3) = waveform{0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43};
 // MAJOR SEVENTH CHORD
-scale(4) = waveform{0, 4, 7, 11, 12, 16, 19, 23};
+scale(4) = waveform{0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35};
 // MINOR CHORD
-scale(5) = waveform{0, 3, 7, 12, 15, 19, 24, 27};
+scale(5) = waveform{0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43};
 // s1 = nentry("scale1", 0, 32, 0, 1) : int;
 // s2 = nentry("scale2", 0, 32, 0, 1) : int;
 // CUSTOM
 // scale(6) = waveform{s1, s2};
 
-scaleTonesN = 7;
+scaleTonesN = 11;
 scalesN = 6;
 
 getTone(tone) = par(i,scalesN,ba.if(scaleSelector == i, (scale(i), tone) : rdtable, 0)) :> _;

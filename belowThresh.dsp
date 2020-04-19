@@ -1,24 +1,22 @@
 import("stdfaust.lib");
 
+import("libs/threshConfig.lib");
+
 alpha = _;
 alphaT = _;
 
-intervalN = 8;
-lowThresh = 0.0;
-hiThresh = 0.8;
-intervalStep = (hiThresh - lowThresh) / intervalN ;
-
-inv = nentry("invert",0,0,1,1);
-
 parallelBus = par(i, intervalN, _);
 
-threshSplit = alphaT <: par(i,intervalN, _ * (lowThresh + (i * intervalStep)));
+threshSplit = alphaT <: par(i,intervalN, _ * getStepRatio(i));
 
 crossCompare(n) =  ba.selector(n, intervalN) > ba.selector(n, intervalN);
 
 alphaIN = alpha <: parallelBus;
 
-compare = alphaIN, threshSplit <: par(i, intervalN, crossCompare(i));
+compare = alphaIN, threshSplit <: par(i, intervalN, crossCompare(i) : enableActiveStep(i))
+with {
+  enableActiveStep(i) = ba.if(i+1 <= activeSteps, _, 0);
+};
 
 negate(a) = a <: ma.neg(_) == _ :> _;
 
