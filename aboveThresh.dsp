@@ -3,7 +3,7 @@ import("stdfaust.lib");
 alpha = _;
 alphaT = _;
 
-intervalN = 8;
+intervalN = 12;
 lowThresh = 0.8;
 hiThresh = 1;
 intervalStep = (hiThresh - lowThresh) / intervalN ;

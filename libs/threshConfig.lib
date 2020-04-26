@@ -3,7 +3,7 @@ lowThresh = 0.0;
 hiThresh = 1;
 
 distributionN = 2;
-activeSteps = nentry("activeSteps", 8, 1, intervalN, 1);
+activeSteps = nentry("activeSteps", 8, 0, intervalN, 1);
 distribution = nentry("distribution", 0, 0, distributionN, 1);
 
 inv = nentry("invert",0,0,1,1);

@@ -9,7 +9,7 @@ parallelBus = par(i, intervalN, _);
 
 threshSplit = alphaT <: par(i,intervalN, _ * getStepRatio(i));
 
-crossCompare(n) =  ba.selector(n, intervalN) > ba.selector(n, intervalN);
+crossCompare(n) =  ba.selector(n, intervalN) >= ba.selector(n, intervalN);
 
 alphaIN = alpha <: parallelBus;
 
