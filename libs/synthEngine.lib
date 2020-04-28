@@ -1,6 +1,8 @@
 // import("soundfiles.lib");
 
 oscN = 4;
+internalGain = 0.5;
+
 getOscType(freq) = par(i,oscN,ba.if(oscType == i, osc(i, freq), 0))
 with {
     osc(0, f) = os.osc(f);
@@ -9,7 +11,16 @@ with {
     osc(3, f) = os.square(f);
 };
 
-synth(freq) =  getOscType(freq) :> _ * mapFromMIDIscale(synthLevel);
+synth(freq) =  getOscType(freq) :> _ * mapFromMIDIscale(synthLevel) * internalGain;
+
+getSubOscType(freq) = par(i,oscN,ba.if(subOscType == i, osc(i, freq), 0))
+with {
+    osc(0, f) = os.osc(f);
+    osc(1, f) = os.sawtooth(f);
+    osc(2, f) = os.triangle(f);
+    osc(3, f) = os.square(f);
+};
+subSynth(freq) =  getSubOscType((freq / 2)) :> _ * mapFromMIDIscale(subSynthLevel);
 // with {
     // decimalpart(x) = x-int(x);
     // phase(f) = f/ma.SR : (+ : decimalpart) ~ _;
@@ -30,11 +41,12 @@ synth(freq) =  getOscType(freq) :> _ * mapFromMIDIscale(synthLevel);
 tunedNoise(freq) = out(freq) : _ * mapFromMIDIscale(noiseLevel)
 with {
     baseFilterFreq = 100;
-    bandWidth = 20;
+    bandWidth = 10;
+    noiseGain = 1.5;
 
     calcLower(freq) = ba.if(freq==0, baseFilterFreq, freq) : int;
     calcUpper(freq) = ba.if(freq==0, baseFilterFreq, freq) + bandWidth : int;    
-    out(x) = no.noise : fi.bandpass(1, calcLower(x), calcUpper(x));
+    out(x) = no.noise * noiseGain : fi.bandpass(1, calcLower(x), calcUpper(x));
 };
 
 smoothOutput = co.compressor_mono(30,ba.linear2db(0.4),0.1,0.1) :  co.limiter_1176_R4_mono :> _;
@@ -55,6 +67,8 @@ smoothOutput = co.compressor_mono(30,ba.linear2db(0.4),0.1,0.1) :  co.limiter_11
 // with {
 //     out(f, p) = os.triangle(f) * en.ar(seqPulseLen, seqPulseLen, p);
 // };
+
+envelope = en.asr(envAttack,envSustain,envRelease);
 
 
 pulseSeq(freq, pulse) = out(freq, pulse) : _ * mapFromMIDIscale(seqLevel)

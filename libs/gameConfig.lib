@@ -8,11 +8,12 @@ mapFromMIDIscale(x) = ba.if(int(x)==0, 0, int(x)/127);
 
 baseKeyMIDI = nentry("baseKeyMIDI",69,0,128,1);
 oscType = nentry("oscType", 0, 0, 4, 1);
+subOscType = nentry("subOscType", 2, 0, 4, 1);
 scaleSelector = nentry("scale", 0, 0, scalesN-1, 1);
 synthLevel = nentry("synthLevel", 64, 0, 127, 1);
 noiseLevel = nentry("noiseLevel", 0, 0, 127, 1);
-envTime = nentry("envelopeTime", 0.2, 0.1, 0.5, 0.05);
-bassTone = nentry("activeSteps", 12, 0, 12, 1);
+bassTone = nentry("activeSteps", 8, 0, 12, 1);
+subSynthLevel = nentry("subSynthLevel", 127, 0, 127, 1);
 
 // ARPEGGIATOR
 
@@ -27,6 +28,12 @@ seqPulseLen = nentry("seqPulseLen", 0.1, 0.1, 1, 0.01);
 
 holdSec = nentry("holdSec", 4, 1, 10, 1);
 resetCounter = nentry("resetCounter", 1, 0, 1, 1);
+
+// ENVELOPE 
+
+envAttack = nentry("envAttack", 0.5, 0, 2, 0.05);
+envSustain = nentry("envSustain", 1, 0, 1, 0.05);
+envRelease = nentry("envRelease", 0.5, 0, 2, 0.05);
 
 // MIXER
 
