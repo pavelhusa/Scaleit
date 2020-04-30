@@ -10,12 +10,14 @@ scale(3) = waveform{0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43};
 scale(4) = waveform{0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35};
 // MINOR CHORD
 scale(5) = waveform{0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43};
+// CHROMATIC SCALE
+scale(6) = waveform{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13};
 // s1 = nentry("scale1", 0, 32, 0, 1) : int;
 // s2 = nentry("scale2", 0, 32, 0, 1) : int;
 // CUSTOM
 // scale(6) = waveform{s1, s2};
 
 scaleTonesN = 11;
-scalesN = 6;
+scalesN = 7;
 
 getTone(tone) = par(i,scalesN,ba.if(scaleSelector == i, (scale(i), tone) : rdtable, 0)) :> _;

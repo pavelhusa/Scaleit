@@ -9,7 +9,8 @@ out = input : par(i, inputsN, _ <: (envelope <: _,_), (toFrequency(i) <: ((synth
 with {
     toFrequency(n) = ba.midikey2hz(baseKeyMIDI+getTone(n));
     // envelope = en.asr(envTime,1,envTime*2);
-    bassSynth(x) = ba.if(x == (bassTone - 1), subSynth(toFrequency(0)), 0); 
+    bassToneConditional = ba.if(inv == 0, bassTone-1, inputsN-bassTone+1);
+    bassSynth(x) = ba.if(x == bassToneConditional, subSynth(toFrequency(0)), 0); 
     panorama(i) = sp.panner(nentry("accordPan%i", 0.5, 0, 1, 0.05));
 };
 
