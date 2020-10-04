@@ -7,7 +7,7 @@ import("libs/synthEngine.lib");
 
 triggerIN = 1;
 
-out = checkInputVal : counter <: toFrequency(_) : sequencer(_)
+out = checkInputVal : counter <: toFrequency(_) <: sequencer(_)
 with {
     checkInputVal(x) = x <: ba.if(x <= 0, 0, _) : ba.if(x >= activeSteps, activeSteps, _) : int; 
 

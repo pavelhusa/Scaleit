@@ -90,14 +90,14 @@
 #X obj 593 619 int;
 #X obj 671 795 aboveThreshCounter~;
 #X obj 1263 825 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-0 1;
+1 1;
 #X obj 1104 803 hsl 128 15 40 120 0 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X floatatom 1096 839 5 0 5 0 - - -;
 #X msg 1172 877 seqTempo \$1;
 #X msg 1489 787 holdSec \$1;
 #X obj 1498 645 hsl 128 15 1 5 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 700 1;
+-1 -1 2600 1;
 #X floatatom 1487 750 5 0 5 0 - - -;
 #X obj 1487 698 int;
 #X obj 1473 822 r level;
@@ -115,9 +115,9 @@
 #X floatatom 859 1027 5 0 2 0 - - -;
 #X floatatom 1011 1029 5 0 5 0 - - -;
 #X obj 837 948 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9700 1;
+-1 -1 0 1;
 #X obj 1013 948 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 859 1089 s level;
 #X obj 1012 1087 s treshold;
 #X obj 1249 943 gameArpSynth~;
@@ -132,7 +132,7 @@
 #X obj 1184 990 dac~;
 #X floatatom 1367 751 5 0 0 0 - - -;
 #X obj 1367 560 vsl 15 128 0 12 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X msg 1368 787 activeSteps \$1;
 #X obj 1367 711 int;
 #X connect 0 0 10 0;

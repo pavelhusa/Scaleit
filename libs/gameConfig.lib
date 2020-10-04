@@ -27,7 +27,7 @@ seqPulseLen = nentry("seqPulseLen", 0.1, 0.1, 1, 0.01);
 // COUNTER 
 
 holdSec = nentry("holdSec", 4, 1, 10, 1);
-resetCounter = nentry("resetCounter", 1, 0, 1, 1);
+resetCounter = nentry("resetCounter", 0, 0, 1, 1);
 
 // ENVELOPE 
 
