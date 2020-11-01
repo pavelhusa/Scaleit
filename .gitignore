@@ -3,4 +3,5 @@ samples
 gameDrumsSynth.dsp
 *Drum*
 *vscode*
-build.sh
+compileAll.sh
+compile.sh
