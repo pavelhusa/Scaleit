@@ -7,13 +7,12 @@ import("libs/synthEngine.lib");
 
 triggerIN = 1;
 
-out = checkInputVal : counter <: toFrequency(_) <: sequencer(_)
+out = checkInputVal <: (counter <: toFrequency(_) <: sequencer(_)) * _
 with {
-    checkInputVal(x) = x <: ba.if(x <= 0, 0, _) : ba.if(x >= activeSteps, activeSteps, _) : int; 
-
+    checkInputVal = ba.if(_ == 0, 0, 1);
     beater = ba.beat(seqTempo);
 
-    counter(n) = beater : ba.pulse_countup_loop(n,seqON) : int;
+    counter(n) = beater : ba.pulse_countup_loop(scaleTonesN-1, n) : int;
 
     toFrequency(n) = ba.midikey2hz(baseKeyMIDI+getTone(n));
     sequencer(p) = pulseSeq(p, beater);
