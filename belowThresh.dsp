@@ -11,7 +11,7 @@ threshSplit = alphaT <: par(i,intervalN, _ * getStepRatio(i));
 
 crossSelect(n) = ba.selector(n, intervalN), ba.selector(n, intervalN);
 
-comparator = _, _ <: ba.if(exclusive xor inv, _ > _, _ >= _);
+comparator = _ > _;
 
 alphaIN = alpha <: parallelBus;
 
