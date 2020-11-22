@@ -33,7 +33,7 @@
 -1 -1 0 1;
 #X msg 788 277 synthLevel \$1;
 #X obj 2151 267 hsl 128 15 40 200 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 12700 1;
+-262144 -1 -1 0 1;
 #X floatatom 2155 303 5 0 5 0 - - -;
 #X obj 2316 454 gameArpSynth~;
 #X msg 2155 341 seqTempo \$1;
@@ -133,17 +133,21 @@ vsech 12 tonu, f 63;
 #X obj 238 256 r scale;
 #X obj 1155 276 r scale;
 #X obj 2174 421 r scale;
-#X floatatom 2391 323 5 0 0 0 - - -;
+#X floatatom 2494 377 5 0 0 0 - - -;
 #X obj 1955 462 gameAccordSynth~, f 20;
 #X obj 1974 387 belowThresh~, f 18;
 #X obj 573 365 gameToneSynth~, f 27;
-#X obj 2395 262 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+#X obj 2498 316 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
 0 1;
 #X floatatom 2283 335 5 0 0 0 - - -;
 #X obj 2283 118 vsl 15 128 0 12 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 11900 1;
-#X msg 2280 379 activeSteps \$1;
+-1 -1 0 1;
+#X msg 2254 376 activeSteps \$1;
 #X obj 2281 293 int;
+#X floatatom 2358 259 5 0 0 0 - - -;
+#X obj 2362 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
+1 1;
+#X msg 2353 326 seqStepsContinue \$1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 107 0;
@@ -283,3 +287,6 @@ vsech 12 tonu, f 63;
 #X connect 110 0 112 1;
 #X connect 111 0 27 0;
 #X connect 112 0 109 0;
+#X connect 113 0 115 0;
+#X connect 114 0 113 0;
+#X connect 115 0 27 0;

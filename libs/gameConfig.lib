@@ -22,6 +22,7 @@ seqTempo = nentry("seqTempo",120,40,200,1);
 seqLevel = nentry("seqLevel", 64, 0, 127, 1);
 seqON = nentry("seqOn", 1, 0, 1, 1);
 seqPulseLen = nentry("seqPulseLen", 0.1, 0.1, 1, 0.01);
+seqStepsContinue = nentry("seqStepsContinue", 0, 0, 1, 1);
 
 
 // COUNTER 
