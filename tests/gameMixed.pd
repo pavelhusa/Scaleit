@@ -14,7 +14,7 @@
 -1 -1 0 1;
 #X msg 13 258 synthLevel \$1;
 #X msg 433 136 invert \$1;
-#X obj 433 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 433 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 1236 244 5 0 4 0 - - -;
 #X floatatom 1428 243 5 0 0 0 - - -;
@@ -35,14 +35,14 @@
 #X obj 2151 267 hsl 128 15 40 200 0 0 empty empty empty -2 -8 0 10
 -262144 -1 -1 0 1;
 #X floatatom 2155 303 5 0 5 0 - - -;
-#X obj 2316 454 gameArpSynth~;
+#X obj 2299 478 gameArpSynth~;
 #X msg 2155 341 seqTempo \$1;
 #X floatatom 708 -86 5 0 2 0 - - -;
 #X floatatom 860 -84 5 0 5 0 - - -;
-#X obj 693 -162 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 696 -162 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
 #X obj 862 -165 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 708 -24 s level;
 #X obj 861 -26 s treshold;
 #X obj 1993 311 r level;
@@ -52,7 +52,7 @@
 #X obj 1351 839 dac~;
 #X obj 267 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 133 505 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 133 505 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X floatatom 109 560 5 0 0 0 - - -;
 #X obj 108 393 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
@@ -62,7 +62,7 @@
 #X obj 246 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X msg 247 593 gameAccordLevel \$1;
-#X obj 410 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 410 500 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 389 558 5 0 0 0 - - -;
 #X obj 389 385 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
@@ -77,7 +77,7 @@
 #X obj 590 291 belowThresh~, f 21;
 #X floatatom 564 118 5 0 0 0 - - -;
 #X obj 564 -73 vsl 15 128 0 12 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
+-1 -1 7100 1;
 #X msg 565 154 activeSteps \$1;
 #X floatatom 1996 217 5 0 0 0 - - -;
 #X obj 1996 0 vsl 15 128 0 12 0 0 empty empty empty 0 -9 0 10 -262144
@@ -146,7 +146,7 @@ vsech 12 tonu, f 63;
 #X obj 2281 293 int;
 #X floatatom 2358 259 5 0 0 0 - - -;
 #X obj 2362 198 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1
-1 1;
+0 1;
 #X msg 2353 326 seqStepsContinue \$1;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
@@ -219,6 +219,7 @@ vsech 12 tonu, f 63;
 #X connect 59 0 82 0;
 #X connect 59 0 82 1;
 #X connect 60 0 57 0;
+#X connect 60 0 107 0;
 #X connect 61 0 63 0;
 #X connect 62 0 81 0;
 #X connect 62 0 81 1;
