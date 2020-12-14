@@ -3,4 +3,4 @@ import("stdfaust.lib");
 import("libs/threshConfig.lib");
 import("libs/gameConfig.lib");
 
-process = sum(i, inputsN, _) / activeSteps ;
+process = input <: ba.if(inv, inv - (sum(i, inputsN, _) / activeSteps), (sum(i, inputsN, _) / activeSteps));
