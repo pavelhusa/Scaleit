@@ -7,7 +7,7 @@ activeSteps = nentry("activeSteps", 8, 0, intervalN, 1);
 distribution = nentry("distribution", 0, 0, distributionN, 1);
 
 inv = nentry("invert", 0, 0, 1, 1);
-excl= nentry("exclusive", 0, 0, 1, 1);
+excl = nentry("exclusive", 0, 0, 1, 1);
 
 getStepRatio(n) = lowThresh + currentStepRation(n)
 with {
