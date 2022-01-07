@@ -1,32 +1,43 @@
-// MAJOR SCALE 
+// MAJOR SCALE
 scale(0) = waveform{0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19};
-// MINOR SCALE 
-scale(1) = waveform{0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 18};
-// WHOLE TONE
-scale(2) = waveform{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22};
-// MAJOR CHORD
-scale(3) = waveform{0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43};
-// MAJOR SEVENTH CHORD
-scale(4) = waveform{0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35};
-// MINOR CHORD
-scale(5) = waveform{0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43};
-// CHROMATIC SCALE
-scale(6) = waveform{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13};
+// DORIAN SCALE
+scale(1) = waveform{0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19};
+// PHRYGIAN SCALE
+scale(2) = waveform{0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19};
+// LYDIAN SCALE
+scale(3) = waveform{0, 2, 4, 6, 7, 9, 11, 12, 14, 16, 17, 18};
+// MIXOLYDIAN SCALE
+scale(4) = waveform{0, 2, 4, 5, 7, 9, 10, 12, 14, 15, 17, 18};
+// (AEOLIAN) MINOR SCALE
+scale(5) = waveform{0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 18};
+// LOCRYAN SCALE
+scale(6) = waveform{0, 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18};
+
 // MAJOR PENTATONIC
 scale(7) = waveform{0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28};
-// MIJOR PENTATONIC
+// MINOR PENTATONIC
 scale(8) = waveform{0, 3, 5, 7, 10, 12, 15, 17, 19, 22, 24, 27, 29};
-// DORIAN
-scale(9) = waveform{0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19};
 // IWATO
-scale(10) = waveform{0, 1, 5, 6, 10, 12, 13, 17, 18, 22, 24, 25};
+scale(9) = waveform{0, 1, 5, 6, 10, 12, 13, 17, 18, 22, 24, 25};
 // HIRAJOSHI
-scale(11) = waveform{0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26};
+scale(10) = waveform{0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26};
+
+// CHROMATIC SCALE
+scale(11) = waveform{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13};
+// WHOLE TONE
+scale(12) = waveform{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22};
+
+// MAJOR CHORD
+scale(13) = waveform{0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43};
+// MAJOR SEVENTH CHORD
+scale(14) = waveform{0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35};
+// MINOR CHORD
+scale(15) = waveform{0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43};
 
 inv = nentry("invert", 0, 0, 1, 1);
 scaleDown = nentry("scaleDown", 0, 0, 1, 1);
 
 scaleTonesN = 11;
-scalesN = 12;
+scalesN = 16;
 
 getTone(tone) = par(i,scalesN,ba.if(scaleSelector == i, (scale(i), tone) : rdtable, 0)) :> _;
