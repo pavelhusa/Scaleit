@@ -1,0 +1,94 @@
+#N canvas 0 25 1440 847 12;
+#X floatatom 311 223 5 0 4 0 - - -;
+#X floatatom 395 221 5 0 0 0 - - -;
+#X msg 396 254 baseKeyMIDI \$1;
+#X msg 311 256 oscType \$1;
+#X msg 121 257 noiseLevel \$1;
+#X floatatom 121 222 5 0 0 0 - - -;
+#X obj 120 64 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 393 66 vsl 15 128 40 100 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X floatatom 13 223 5 0 0 0 - - -;
+#X obj 12 58 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 13 258 synthLevel \$1;
+#X msg 433 136 invert \$1;
+#X obj 433 87 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X floatatom 1012 -68 5 0 2 0 - - -;
+#X floatatom 1164 -66 5 0 5 0 - - -;
+#X obj 1000 -144 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 1166 -147 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 12700 1;
+#X obj 1012 -6 s level;
+#X obj 1165 -8 s treshold;
+#X obj 800 212 r level;
+#X obj 866 212 r treshold;
+#X obj 744 467 dac~;
+#X obj 600 269 belowThresh~, f 21;
+#X floatatom 564 118 5 0 0 0 - - -;
+#X obj 562 -81 vsl 15 128 0 12 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 12700 1;
+#X msg 565 154 activeSteps \$1;
+#X obj 564 78 int;
+#X obj 466 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 466 100 exclusive \$1;
+#X floatatom 895 -151 5 0 11 0 - - -;
+#X msg 896 -67 scale \$1;
+#X obj 898 -8 s scale;
+#X obj 238 256 r scale;
+#X obj 572 365 gameToneSynth~, f 27;
+#X floatatom 703 117 5 0 0 0 - - -;
+#X obj 701 -82 vsl 15 128 -2 2 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 703 152 curve \$1;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 2 0 33 0;
+#X connect 3 0 33 0;
+#X connect 4 0 33 0;
+#X connect 5 0 4 0;
+#X connect 6 0 5 0;
+#X connect 7 0 1 0;
+#X connect 8 0 10 0;
+#X connect 9 0 8 0;
+#X connect 10 0 33 0;
+#X connect 11 0 33 0;
+#X connect 12 0 11 0;
+#X connect 13 0 17 0;
+#X connect 14 0 18 0;
+#X connect 15 0 13 0;
+#X connect 16 0 14 0;
+#X connect 19 0 22 1;
+#X connect 20 0 22 2;
+#X connect 22 0 33 1;
+#X connect 22 1 33 2;
+#X connect 22 2 33 3;
+#X connect 22 3 33 4;
+#X connect 22 4 33 5;
+#X connect 22 5 33 6;
+#X connect 22 6 33 7;
+#X connect 22 7 33 8;
+#X connect 22 8 33 9;
+#X connect 22 9 33 10;
+#X connect 22 10 33 11;
+#X connect 22 11 33 12;
+#X connect 23 0 25 0;
+#X connect 24 0 26 0;
+#X connect 24 0 26 1;
+#X connect 25 0 22 0;
+#X connect 25 0 33 0;
+#X connect 26 0 23 0;
+#X connect 27 0 28 0;
+#X connect 28 0 33 0;
+#X connect 29 0 30 0;
+#X connect 30 0 31 0;
+#X connect 32 0 33 0;
+#X connect 33 1 21 0;
+#X connect 33 1 21 1;
+#X connect 34 0 36 0;
+#X connect 35 0 34 0;
+#X connect 36 0 22 0;

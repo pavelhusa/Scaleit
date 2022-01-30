@@ -9,8 +9,9 @@ distribution = nentry("distribution", 0, 0, distributionN, 1);
 inv = nentry("invert", 0, 0, 1, 1);
 excl = nentry("exclusive", 0, 0, 1, 1);
 
+curve = nentry("curve", 0, -10, 10, 0.01);
+
 getStepRatio(n) = lowThresh + currentStepRation(n)
 with {
-  currentStepRation(i) = linear(i);
-  linear(x) = x * (hiThresh - lowThresh) / activeSteps;
+  currentStepRation(i) = (i / activeSteps) ^ (2 ^ curve);
 };
