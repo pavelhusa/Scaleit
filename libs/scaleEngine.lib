@@ -1,6 +1,5 @@
 //# Scale configuration
-// Listed scales/chords are defined as relative step from base MIDI note number. Tones are limited to 12 tones, more dynamic approach to extend available notes as well as custom scales will follow.
-// Availables scales/chords 16.
+// Listed scales/chords are defined as a relative step from the base MIDI note number. Tones are limited to 12 tones. A more dynamic approach to extending available notes and custom scales will follow. Currently is available 16 scales/chords.
 
 // #### Modes
 // major scale

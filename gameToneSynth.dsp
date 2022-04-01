@@ -1,3 +1,5 @@
+//# Game Tone Synth
+// Monophonic synth game.
 import("stdfaust.lib");
 
 import("libs/gameConfig.lib");

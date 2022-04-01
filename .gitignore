@@ -6,7 +6,9 @@ gameDrumsSynth.dsp
 compileAll.sh
 compile.sh
 faust.*
-README_TEMPLATE.md
+README_GENERAL.md
+README_DSP.md
+README_LIB.md
 generateDoc.sh
 node_modules/
 node_modules/*

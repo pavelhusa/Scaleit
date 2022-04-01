@@ -1,7 +1,24 @@
-# Scale it - WIP
-EEG music neurofeedback. Currently (Feb 2022), the work is in progress. Documentation update is scheduled to be done approximately on April 2022.
+# Scale it
 
-# Documentation
+'Scale it' is an open-source program (written in graphical programming language Pure data and Faust) that allows sonification of signal distribution in real-time. "Scale it" is being developed primarily for neurofeedback purposes. To allow the straightforward and customizable instrument to carry sonic feedback about EEG activity in specific neocortex regions.
+
+## Games
+
+There are two different possibilities for sonification of the signal. One of the objects, tone, generates changes in pitch of a monophonic tone. The other object, chord, expresses the input value in the width of polyphony.
+
+<!--transcribe-->
+
+### [Game Accord synth](gameAccordSynth.dsp)
+Polyphonic version of Game Tone.
+
+### [Game Tone Synth](gameToneSynth.dsp)
+Monophonic synth game.
+
+<!--/transcribe-->
+
+## Configuration documentation
+
+<!--transcribe-->
 
 ### [Game configuration](libs/gameConfig.lib)
 Configuration and inputs definition for all listed games.
@@ -55,8 +72,7 @@ Configuration and inputs definition for all listed games.
 |gameArpPan|0.5|0|1|0.01|
 
 ### [Scale configuration](libs/scaleEngine.lib)
-Listed scales/chords are defined as relative step from base MIDI note number. Tones are limited to 12 tones, more dynamic approach to extend available notes as well as custom scales will follow.
-Availables scales/chords 16.
+Listed scales/chords are defined as a relative step from the base MIDI note number. Tones are limited to 12 tones. A more dynamic approach to extending available notes and custom scales will follow. Currently is available 16 scales/chords.
 
 #### Modes
 major scale
@@ -113,3 +129,5 @@ Threshold stages for comparing with input signal.
 |invert|0|0|1|1|
 |exclusive|0|0|1|1|
 |curve|0|-10|10|0.01|
+
+<!--/transcribe-->

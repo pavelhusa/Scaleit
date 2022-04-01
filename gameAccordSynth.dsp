@@ -1,3 +1,5 @@
+//# Game Accord synth
+// Polyphonic version of Game Tone.
 import("stdfaust.lib");
 
 import("libs/gameConfig.lib");
