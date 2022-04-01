@@ -8,3 +8,7 @@ compile.sh
 faust.*
 README_TEMPLATE.md
 generateDoc.sh
+node_modules/
+node_modules/*
+yarn.lock
+package.json

@@ -3,7 +3,7 @@ EEG music neurofeedback. Currently (Feb 2022), the work is in progress. Document
 
 # Documentation
 
-### <a name="Game configuration" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/gameConfig.lib#L1">`Game configuration`</a>
+### [Game configuration](libs/gameConfig.lib)
 Configuration and inputs definition for all listed games.
 
 **inputsN** general number of inputs for each game
@@ -54,7 +54,7 @@ Configuration and inputs definition for all listed games.
 |gameTonePan|0.5|0|1|0.01|
 |gameArpPan|0.5|0|1|0.01|
 
-### <a name="Scale configuration" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/scaleEngine.lib#L1">`Scale configuration`</a>
+### [Scale configuration](libs/scaleEngine.lib)
 Listed scales/chords are defined as relative step from base MIDI note number. Tones are limited to 12 tones, more dynamic approach to extend available notes as well as custom scales will follow.
 Availables scales/chords 16.
 
@@ -95,10 +95,10 @@ major seventh chord {0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35}
 
 minor chord {0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43}
 
-### <a name="Oscillator engine" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/synthEngine.lib#L1">`Oscillator engine`</a>
+### [Oscillator engine](libs/synthEngine.lib)
 Oscillators are shared within all *synth.dsp files. Currently sawtooth, sine, triangle and square with noise is awailable. Also basic ASR envelope is handled here.
 
-### <a name="Threshold configuration" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/threshConfig.lib#L1">`Threshold configuration`</a>
+### [Threshold configuration](libs/threshConfig.lib)
 Threshold stages for comparing with input signal.
 
 |Name | description |
