@@ -1,37 +1,46 @@
-// MAJOR SCALE
+//# Scale configuration
+// Listed scales/chords are defined as relative step from base MIDI note number. Tones are limited to 12 tones, more dynamic approach to extend available notes as well as custom scales will follow.
+// Availables scales/chords 16.
+
+// #### Modes
+// major scale
+//{0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19}
 scale(0) = waveform{0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19};
-// DORIAN SCALE
+// dorian scale {0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19}
 scale(1) = waveform{0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19};
-// PHRYGIAN SCALE
+// phrygian scale {0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19}
 scale(2) = waveform{0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19};
-// LYDIAN SCALE
+// lydian scale {0, 2, 4, 6, 7, 9, 11, 12, 14, 16, 17, 18}
 scale(3) = waveform{0, 2, 4, 6, 7, 9, 11, 12, 14, 16, 17, 18};
-// MIXOLYDIAN SCALE
+// mixolydian scale {0, 2, 4, 5, 7, 9, 10, 12, 14, 15, 17, 18}
 scale(4) = waveform{0, 2, 4, 5, 7, 9, 10, 12, 14, 15, 17, 18};
-// (AEOLIAN) MINOR SCALE
+// (aeolian) minor scale {0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 18}
 scale(5) = waveform{0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 18};
-// LOCRYAN SCALE
+// locryan scale {0, 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18}
 scale(6) = waveform{0, 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18};
 
-// MAJOR PENTATONIC
+// #### Pentatonics
+// major pentatonic {0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28}
 scale(7) = waveform{0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28};
-// MINOR PENTATONIC
+// minor pentatonic {0, 3, 5, 7, 10, 12, 15, 17, 19, 22, 24, 27, 29}
 scale(8) = waveform{0, 3, 5, 7, 10, 12, 15, 17, 19, 22, 24, 27, 29};
-// IWATO
+// iwato {0, 1, 5, 6, 10, 12, 13, 17, 18, 22, 24, 25}
 scale(9) = waveform{0, 1, 5, 6, 10, 12, 13, 17, 18, 22, 24, 25};
-// HIRAJOSHI
+// hirajoshi {0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26}
 scale(10) = waveform{0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26};
 
-// CHROMATIC SCALE
+// #### Symetric scales
+// chromatic scale {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13}
 scale(11) = waveform{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13};
-// WHOLE TONE
+// whole tone {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22}
 scale(12) = waveform{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22};
 
-// MAJOR CHORD
+// #### Chords
+// major chord {0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43}
 scale(13) = waveform{0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43};
-// MAJOR SEVENTH CHORD
+// major seventh chord {0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35}
 scale(14) = waveform{0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35};
-// MINOR CHORD
+// minor chord {0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43}
 scale(15) = waveform{0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43};
 
 inv = nentry("invert", 0, 0, 1, 1);

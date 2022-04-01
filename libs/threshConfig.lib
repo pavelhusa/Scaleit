@@ -1,10 +1,24 @@
+//# Threshold configuration
+// Threshold stages for comparing with input signal.
+//
+// |Name | description |
+// | -- | -- |
+// |intervalN|Maximum number of stages between low and high threshold.|
+// |lowThresh |Low threshold |
+// |hiThresh |High threshold |
+
 intervalN = 12;
 lowThresh = 0.0;
 hiThresh = 1;
 
-distributionN = 2;
+// | Parameter name | default value | min value | max value | step |
+// | --- | --- | --- | --- | --- |
+// |activeSteps|8|0|intervalN|1|
+// |invert|0|0|1|1|
+// |exclusive|0|0|1|1|
+// |curve|0|-10|10|0.01|
+
 activeSteps = nentry("activeSteps", 8, 0, intervalN, 1);
-distribution = nentry("distribution", 0, 0, distributionN, 1);
 
 inv = nentry("invert", 0, 0, 1, 1);
 excl = nentry("exclusive", 0, 0, 1, 1);

@@ -6,3 +6,5 @@ gameDrumsSynth.dsp
 compileAll.sh
 compile.sh
 faust.*
+README_TEMPLATE.md
+generateDoc.sh

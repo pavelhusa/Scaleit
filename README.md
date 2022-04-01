@@ -1,2 +1,115 @@
 # Scale it - WIP
 EEG music neurofeedback. Currently (Feb 2022), the work is in progress. Documentation update is scheduled to be done approximately on April 2022.
+
+# Documentation
+
+### <a name="Game configuration" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/gameConfig.lib#L1">`Game configuration`</a>
+Configuration and inputs definition for all listed games.
+
+**inputsN** general number of inputs for each game
+
+#### TONE ACCORD
+| Parameter name | default value | min value | max value | step |
+| --- | --- | --- | --- | --- |
+|baseKeyMIDI|69|0|128|1|
+|oscType|0|0|4|1|
+|subOscType|2|0|4|1|
+|scale|0|0|scalesN-1|1|
+|synthLevel|64|0|127|1|
+|noiseLevel|0|0|127|1|
+|activeSteps|8|0|12|1|
+|subSynthLevel|127|0|127|1|
+
+#### ARPEGGIATOR
+| Parameter name | default value | min value | max value | step |
+| --- | --- | --- | --- | --- |
+|seqTempo|120|40|200|1|
+|seqLevel|64|0|127|1|
+|seqOn|1|0|1|1|
+|seqPulseLen|0.1|0.1|1|0.01|
+|seqStepsContinue|0|0|1|1|
+
+#### COUNTER
+| Parameter name | default value | min value | max value | step |
+| --- | --- | --- | --- | --- |
+|holdSec|4|0|10|0.01|
+|resetCounter|0|0|1|1|
+
+#### ENVELOPE 
+| Parameter name | default value | min value | max value | step |
+| --- | --- | --- | --- | --- |
+|envAttack|1|0|5|0.05|
+|envSustain|1|0|1|0.05|
+|envRelease|0.5|0|5|0.05|
+
+#### MIXER
+| Parameter name | default value | min value | max value | step |
+| --- | --- | --- | --- | --- |
+|gameToneLevel|64|0|127|1|
+|gameAccordLevel|64|0|127|1|
+|gameArpLevel|64|0|127|1|
+|gameToneON|0|0|1|1|
+|gameAccordON|0|0|1|1|
+|gameArpON|0|0|1|1|
+|gameTonePan|0.5|0|1|0.01|
+|gameArpPan|0.5|0|1|0.01|
+
+### <a name="Scale configuration" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/scaleEngine.lib#L1">`Scale configuration`</a>
+Listed scales/chords are defined as relative step from base MIDI note number. Tones are limited to 12 tones, more dynamic approach to extend available notes as well as custom scales will follow.
+Availables scales/chords 16.
+
+#### Modes
+major scale
+{0, 2, 4, 5, 7, 9, 11, 12, 14, 16, 17, 19}
+
+dorian scale {0, 2, 3, 5, 7, 9, 10, 12, 14, 15, 17, 19}
+
+phrygian scale {0, 1, 3, 5, 7, 8, 10, 12, 13, 15, 17, 19}
+
+lydian scale {0, 2, 4, 6, 7, 9, 11, 12, 14, 16, 17, 18}
+
+mixolydian scale {0, 2, 4, 5, 7, 9, 10, 12, 14, 15, 17, 18}
+
+(aeolian) minor scale {0, 2, 3, 5, 7, 8, 10, 12, 14, 15, 17, 18}
+
+locryan scale {0, 1, 3, 5, 6, 8, 10, 12, 13, 15, 17, 18}
+
+#### Pentatonics
+major pentatonic {0, 2, 4, 7, 9, 12, 14, 16, 19, 21, 24, 26, 28}
+
+minor pentatonic {0, 3, 5, 7, 10, 12, 15, 17, 19, 22, 24, 27, 29}
+
+iwato {0, 1, 5, 6, 10, 12, 13, 17, 18, 22, 24, 25}
+
+hirajoshi {0, 2, 3, 7, 8, 12, 14, 15, 19, 20, 24, 26}
+
+#### Symetric scales
+chromatic scale {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13}
+
+whole tone {0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22}
+
+#### Chords
+major chord {0, 4, 7, 12, 16, 19, 24, 28, 31, 36, 40, 43}
+
+major seventh chord {0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35}
+
+minor chord {0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43}
+
+### <a name="Oscillator engine" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/synthEngine.lib#L1">`Oscillator engine`</a>
+Oscillators are shared within all *synth.dsp files. Currently sawtooth, sine, triangle and square with noise is awailable. Also basic ASR envelope is handled here.
+
+### <a name="Threshold configuration" href="https://github.com/pavelhusa/Scaleit/blob/master/libs/threshConfig.lib#L1">`Threshold configuration`</a>
+Threshold stages for comparing with input signal.
+
+|Name | description |
+| -- | -- |
+|intervalN|Maximum number of stages between low and high threshold.|
+|lowThresh |Low threshold |
+|hiThresh |High threshold |
+
+| Parameter name | default value | min value | max value | step |
+| --- | --- | --- | --- | --- |
+|activeSteps|8|0|intervalN|1|
+|invert|0|0|1|1|
+|exclusive|0|0|1|1|
+|curve|0|-10|10|0.01|

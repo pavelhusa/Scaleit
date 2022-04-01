@@ -1,3 +1,5 @@
+//# Oscillator engine
+// Oscillators are shared within all *synth.dsp files. Currently sawtooth, sine, triangle and square with noise is awailable. Also basic ASR envelope is handled here.
 oscN = 4;
 internalGain = 0.5;
 

@@ -1,10 +1,24 @@
+//# Game configuration
+// Configuration and inputs definition for all listed games.
+//
+// **inputsN** general number of inputs for each game
 inputsN = 12;
 input = si.bus(inputsN);
 parallelBus = par(i, inputsN, _);
 
 mapFromMIDIscale(x) = ba.if(int(x)==0, 0, int(x)/127);
 
-//TONE ACCORD
+// #### TONE ACCORD
+// | Parameter name | default value | min value | max value | step |
+// | --- | --- | --- | --- | --- |
+// |baseKeyMIDI|69|0|128|1|
+// |oscType|0|0|4|1|
+// |subOscType|2|0|4|1|
+// |scale|0|0|scalesN-1|1|
+// |synthLevel|64|0|127|1|
+// |noiseLevel|0|0|127|1|
+// |activeSteps|8|0|12|1|
+// |subSynthLevel|127|0|127|1|
 
 baseKeyMIDI = nentry("baseKeyMIDI",69,0,128,1);
 oscType = nentry("oscType", 0, 0, 4, 1);
@@ -15,7 +29,14 @@ noiseLevel = nentry("noiseLevel", 0, 0, 127, 1);
 bassTone = nentry("activeSteps", 8, 0, 12, 1);
 subSynthLevel = nentry("subSynthLevel", 127, 0, 127, 1);
 
-// ARPEGGIATOR
+// #### ARPEGGIATOR
+// | Parameter name | default value | min value | max value | step |
+// | --- | --- | --- | --- | --- |
+// |seqTempo|120|40|200|1|
+// |seqLevel|64|0|127|1|
+// |seqOn|1|0|1|1|
+// |seqPulseLen|0.1|0.1|1|0.01|
+// |seqStepsContinue|0|0|1|1|
 
 seqSteps = 12;
 seqTempo = nentry("seqTempo",120,40,200,1);
@@ -25,18 +46,37 @@ seqPulseLen = nentry("seqPulseLen", 0.1, 0.1, 1, 0.01);
 seqStepsContinue = nentry("seqStepsContinue", 0, 0, 1, 1);
 
 
-// COUNTER 
+// #### COUNTER
+// | Parameter name | default value | min value | max value | step |
+// | --- | --- | --- | --- | --- |
+// |holdSec|4|0|10|0.01|
+// |resetCounter|0|0|1|1|
 
 holdSec = nentry("holdSec", 4, 0, 10, 0.01);
 resetCounter = nentry("resetCounter", 0, 0, 1, 1);
 
-// ENVELOPE 
+// #### ENVELOPE 
+// | Parameter name | default value | min value | max value | step |
+// | --- | --- | --- | --- | --- |
+// |envAttack|1|0|5|0.05|
+// |envSustain|1|0|1|0.05|
+// |envRelease|0.5|0|5|0.05|
 
 envAttack = nentry("envAttack", 1, 0, 5, 0.05);
 envSustain = nentry("envSustain", 1, 0, 1, 0.05);
 envRelease = nentry("envRelease", 0.5, 0, 5, 0.05);
 
-// MIXER
+// #### MIXER
+// | Parameter name | default value | min value | max value | step |
+// | --- | --- | --- | --- | --- |
+// |gameToneLevel|64|0|127|1|
+// |gameAccordLevel|64|0|127|1|
+// |gameArpLevel|64|0|127|1|
+// |gameToneON|0|0|1|1|
+// |gameAccordON|0|0|1|1|
+// |gameArpON|0|0|1|1|
+// |gameTonePan|0.5|0|1|0.01|
+// |gameArpPan|0.5|0|1|0.01|
 
 gameToneLevel = nentry("gameToneLevel", 64, 0, 127, 1);
 gameAccordLevel = nentry("gameAccordLevel", 64, 0, 127, 1);
