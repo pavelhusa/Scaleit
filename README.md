@@ -8,8 +8,14 @@ There are two different possibilities for sonification of the signal. One of the
 
 <!--transcribe-->
 
+### [Game Accord](gameAccord.dsp)
+Polyphonic version of Game Tone combined with below thresh.
+
 ### [Game Accord synth](gameAccordSynth.dsp)
 Polyphonic version of Game Tone.
+
+### [Game Tone](gameTone.dsp)
+Monophonic synth game combined with belowThresh.
 
 ### [Game Tone Synth](gameToneSynth.dsp)
 Monophonic synth game.
