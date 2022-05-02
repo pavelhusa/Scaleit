@@ -35,7 +35,7 @@ with {
 
 smoothOutput = co.compressor_mono(30,ba.linear2db(0.4),0.1,0.1) :  co.limiter_1176_R4_mono :> _;
 
-envelope = en.asr(envAttack,envSustain,envRelease);
+envelope = en.adsr(envAttack,envDecay,envSustain,envRelease);
 
 
 pulseSeq(freq, pulse) = out(freq, pulse) : _ * mapFromMIDIscale(seqLevel)

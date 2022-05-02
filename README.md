@@ -62,6 +62,7 @@ Configuration and inputs definition for all listed games.
 | Parameter name | default value | min value | max value | step |
 | --- | --- | --- | --- | --- |
 |envAttack|1|0|5|0.05|
+|envDecay|1|0|5|0.05|
 |envSustain|1|0|1|0.05|
 |envRelease|0.5|0|5|0.05|
 
