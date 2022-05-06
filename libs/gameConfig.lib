@@ -23,7 +23,7 @@ mapFromMIDIscale(x) = ba.if(int(x)==0, 0, int(x)/127);
 baseKeyMIDI = nentry("baseKeyMIDI",69,0,128,1);
 oscType = nentry("oscType", 0, 0, 4, 1);
 subOscType = nentry("subOscType", 2, 0, 4, 1);
-scaleSelector = nentry("scale", 0, 0, scalesN, 1);
+scaleSelector = nentry("scale", 0, 0, scalesN-1, 1);
 synthLevel = nentry("synthLevel", 64, 0, 127, 1);
 noiseLevel = nentry("noiseLevel", 0, 0, 127, 1);
 bassTone = nentry("activeSteps", 8, 0, 12, 1);
