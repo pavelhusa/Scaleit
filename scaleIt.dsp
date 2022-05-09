@@ -51,7 +51,7 @@ with {
     bassSynth(x) = ba.if(bassToneConditional(x), subSynth(toFrequency(0)), 0); 
     panorama(i) = sp.panner(nentry("accordPan%i", 0.5, 0, 1, 0.05));
 };
-
+// Parameter gameSelect 0 (default) for gameTone 1 gameAccord.
 gameSelector = nentry("gameSelect", 0, 0, 1, 1);
 
 process = compare : invertor <: (gameTone :> _), (gameAccord :> _) : select2(gameSelector) <: par(i, 2, smoothOutput);
