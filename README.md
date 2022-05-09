@@ -20,6 +20,11 @@ Monophonic synth game combined with belowThresh.
 ### [Game Tone Synth](gameToneSynth.dsp)
 Monophonic synth game.
 
+### [ScaleIt](scaleIt.dsp)
+Game Tone and Game Accord combined together to an all-in-one box.
+
+Parameter gameSelect 0 (default) for gameTone 1 gameAccord.
+
 <!--/transcribe-->
 
 ## Configuration documentation
@@ -119,7 +124,7 @@ major seventh chord {0, 4, 7, 11, 12, 16, 19, 23, 24, 28, 31, 35}
 minor chord {0, 3, 7, 12, 15, 19, 24, 27, 31, 36, 39, 43}
 
 #### Custom scale
-It can interpret incoming parameters customScale[0-11] as halftones, the range is from 0 (base tone) to 48, so almost four octaves.
+Scale it can interpret incoming parameters **customScale[0-11]** as halftones, the range is from 0 (base tone) to 48, so almost four octaves.
 
 ### [Oscillator engine](libs/synthEngine.lib)
 Oscillators are shared within all *synth.dsp files. Currently sawtooth, sine, triangle and square with noise is awailable. Also basic ASR envelope is handled here.
