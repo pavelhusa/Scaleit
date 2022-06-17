@@ -20,7 +20,6 @@ with {
     osc(2, f) = os.triangle(f);
     osc(3, f) = os.square(f);
 };
-subSynth(freq) =  getSubOscType((freq / 2)) :> _ * mapFromMIDIscale(subSynthLevel);
 
 tunedNoise(freq) = out(freq) : _ * mapFromMIDIscale(noiseLevel)
 with {
