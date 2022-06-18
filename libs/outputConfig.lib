@@ -1,0 +1,2 @@
+noteOn = hbargraph("MIDI NoteOn: ", 0, 127);
+threshMeterOutput = hbargraph("Threshold: ", 0, 1);
