@@ -20,6 +20,9 @@ hiThresh = 1;
 
 activeSteps = nentry("activeSteps", 8, 0, intervalN, 1);
 
+playBelow = nentry("playBelow", 1, 0, 1, 1);
+playAbove = nentry("playAbove", 1, 0, 1, 1);
+
 inv = nentry("invert", 0, 0, 1, 1);
 excl = nentry("exclusive", 0, 0, 1, 1);
 
