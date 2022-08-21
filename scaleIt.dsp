@@ -35,9 +35,9 @@ with {
 gameTone = sumInput <: toneSelector : toneBank
 with {
     sumInput = input :> _;
-    toneSelector(x) = exclusiveConditional : ba.selectoutn(inputsN, ba.if(inv == 0, (x + (excl : int)), ((activeSteps - x) + (excl : int)))) : par(i, inputsN, _);
-    exclusiveConditional(x) = ba.if(((x == 0) & (excl == 1)), 0, 1);
-    toneBank = par(i, inputsN, _ <: envelope, (getFrequency(i-(excl : int)) <: synth, tunedNoise :> _) : _ * _);
+    toneSelector(x) = 1 : ba.selectoutn(inputsN, ba.if(conditional(x) == 1, ba.if(inv == 0, x, activeSteps - x), -1));
+    conditional(x) = (((x <= 0) & (playBelow == 1)) | ((x >= activeSteps) & (playAbove == 1))) | ((x > 0) & (x < activeSteps));
+    toneBank = par(i, inputsN, _ <: envelope, (getFrequency(i) <: synth, tunedNoise :> _) : _ * _);
 
     getFrequency(x) = ba.if(scaleDown, toFrequencyDown(x), toFrequency(x));
     toFrequency(n) = ba.midikey2hz(baseKeyMIDI+getTone(n));
