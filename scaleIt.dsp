@@ -34,7 +34,8 @@ with {
 
 gameTone = sumInput <: toneSelector : toneBank
 with {
-    sumInput = input :> _;
+    sumInput = input :> attach(_, messageOutput) : _;
+    messageOutput(x) = (baseKeyMIDI+getTone(x)) : int : vbargraph("MIDInoteOut",0,128);
     toneSelector(x) = 1 : ba.selectoutn(inputsN, ba.if(conditional(x) == 1, ba.if(inv == 0, x, activeSteps - x), -1));
     conditional(x) = (((x <= 0) & (playBelow == 1)) | ((x >= activeSteps) & (playAbove == 1))) | ((x > 0) & (x < activeSteps));
     toneBank = par(i, inputsN, _ <: envelope, (getFrequency(i) <: synth, tunedNoise :> _) : _ * _);

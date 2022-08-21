@@ -1,4 +1,4 @@
-#N canvas 0 25 1440 847 12;
+#N canvas 541 25 823 847 12;
 #X floatatom 311 223 5 0 4 0 - - - 0;
 #X floatatom 395 221 5 0 0 0 - - - 0;
 #X msg 396 254 baseKeyMIDI \$1;
@@ -54,6 +54,9 @@ customScale3 2 \, customScale4 5 \, customScale5 8 \, customScale6
 #000000 0 1;
 #X msg 346 20 playBelow \$1;
 #X msg 452 21 playAbove \$1;
+#X obj 605 254 bng 15 250 50 0 empty empty empty 17 7 0 10 #fcfcfc
+#000000 #000000;
+#X obj 520 457 print;
 #X connect 0 0 3 0;
 #X connect 1 0 2 0;
 #X connect 2 0 34 0;
@@ -85,6 +88,7 @@ customScale3 2 \, customScale4 5 \, customScale5 8 \, customScale6
 #X connect 31 0 30 0;
 #X connect 32 0 34 0;
 #X connect 33 0 34 0;
+#X connect 34 0 43 0;
 #X connect 34 1 21 0;
 #X connect 34 2 21 1;
 #X connect 35 0 34 0;
@@ -93,3 +97,4 @@ customScale3 2 \, customScale4 5 \, customScale5 8 \, customScale6
 #X connect 39 0 41 0;
 #X connect 40 0 34 0;
 #X connect 41 0 34 0;
+#X connect 42 0 34 0;
