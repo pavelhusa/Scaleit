@@ -1,0 +1,9 @@
+//# Invertor part
+negate(a) = a <: ma.neg(_) == _ :> _;
+
+invertor = parallelBus <: unchanged, partCrossed, crossed :> par(i, intervalN, ba.if(i+1 <= activeSteps, _, 0))
+with {
+  unchanged = par(i, intervalN, ba.if(inv == 0, _, 0));
+  partCrossed = par(i, intervalN-2, ro.cross(i+2), si.bus(intervalN-i-2) : par(j, intervalN, negate : ba.if((i+2 == activeSteps) & inv, _, 0)));
+  crossed = ro.cross(intervalN) : par(i, intervalN, negate :  ba.if((intervalN == activeSteps) & inv, _, 0));
+};
