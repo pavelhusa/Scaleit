@@ -3,8 +3,8 @@
 import("stdfaust.lib");
 import("libs/comparator.lib");
 import("libs/invertor.lib");
-import("gameAccord.dsp");
-import("gameTone.dsp");
-import("outputMIDI.dsp");
+import("gameAccord.lib");
+import("gameTone.lib");
+import("outputMIDI.lib");
 
 process = compare : invertor <: (gameAccord, gameTone :> _, _), outputMIDI;
