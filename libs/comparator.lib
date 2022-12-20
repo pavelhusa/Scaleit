@@ -12,7 +12,4 @@ crossSelect(n) = ba.selector(n, intervalN), ba.selector(n, intervalN);
 
 alphaIN = alpha <: parallelBus;
 
-compare = (alphaIN, threshSplit) <: par(i, intervalN, crossSelect(i) : _, _) : (playBelowCond, par(i, intervalN-1, _ > _))
-with {
-  playBelowCond(x, y) = (((playBelow == 1) & (y <= 0)) | ((playBelow == 0) & (x > y)));
-};
+compare = (alphaIN, threshSplit) <: par(i, intervalN, crossSelect(i) : _, _) : par(i, intervalN, _ > _);
