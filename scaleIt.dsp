@@ -6,5 +6,6 @@ import("libs/invertor.lib");
 import("gameAccord.lib");
 import("gameTone.lib");
 import("outputMIDI.lib");
+import("threshMeter.lib");
 
-process = compare : invertor <: (gameAccord, gameTone :> _, _), outputMIDI;
+process = compare : invertor <: (gameAccord, gameTone :> _, _), outputMIDI, threshMeter;
