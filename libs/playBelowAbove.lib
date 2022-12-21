@@ -1,0 +1,4 @@
+import("stdfaust.lib");
+import("libs/gameConfig.lib");
+
+playBelowAbove(_alpha, _thresh) = ba.if((((_alpha <= 0) & (playBelow == 0)) | ((_alpha >= _thresh) & (playAbove == 0))), 0, _);

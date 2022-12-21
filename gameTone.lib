@@ -10,8 +10,7 @@ import("libs/threshConfig.lib");
 gameTone = sumInput <: toneSelector : toneBank :> _,_ : par(i, 2, smoothOutput * gameToneON)
 with {
     sumInput = input :> _;
-    toneSelector(x) = 1 : ba.selectoutn(inputsN, ba.if(conditional(x) == 1, ba.if(inv == 0, x, activeSteps - x), -1));
-    conditional(x) = (((x <= 0) & (playBelow == 1)) | ((x >= activeSteps) & (playAbove == 1))) | ((x > 0) & (x < activeSteps));
+    toneSelector(x) = 1 : ba.selectoutn(inputsN, ba.if(inv == 0, x - 1, activeSteps - x - 1));
     toneBank = par(i, inputsN, _ <: envelope, (getFrequency(i) <: synth, tunedNoise :> _) : _ * _);
 
     getFrequency(x) = ba.if(scaleDown, toFrequencyDown(x), toFrequency(x));

@@ -3,9 +3,10 @@
 import("stdfaust.lib");
 import("libs/comparator.lib");
 import("libs/invertor.lib");
+import("libs/playBelowAbove.lib");
 import("gameAccord.lib");
 import("gameTone.lib");
 import("outputMIDI.lib");
 import("threshMeter.lib");
 
-process = compare : invertor <: (gameAccord, gameTone :> _, _), outputMIDI, threshMeter;
+process(_alpha, _thresh) = compare(_alpha, _thresh) : invertor <: (gameAccord, gameTone :> playBelowAbove(_alpha, _thresh), playBelowAbove(_alpha, _thresh)), outputMIDI, threshMeter;
